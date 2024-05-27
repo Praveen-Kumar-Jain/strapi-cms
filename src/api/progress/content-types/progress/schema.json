@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "progresses",
+  "info": {
+    "singularName": "progress",
+    "pluralName": "progresses",
+    "displayName": "Progress",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "completed": {
+      "type": "string"
+    },
+    "presentation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::presentation.presentation",
+      "inversedBy": "progress"
+    }
+  }
+}

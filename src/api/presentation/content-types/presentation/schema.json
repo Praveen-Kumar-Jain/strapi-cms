@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "presentations",
+  "info": {
+    "singularName": "presentation",
+    "pluralName": "presentations",
+    "displayName": "Presentation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 20,
+      "minLength": 3
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "presentations"
+    },
+    "Description": {
+      "type": "richtext",
+      "minLength": 3
+    },
+    "progress": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::progress.progress",
+      "mappedBy": "presentation"
+    }
+  }
+}
